@@ -12,7 +12,11 @@ const todoRouter = require('./routes/todo');
 
 // 미들웨어
 app.use(cors({
-  origin: ['http://localhost:3000', process.env.FRONTEND_URL].filter(Boolean),
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://todo-frontend-6gtt.vercel.app'
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
